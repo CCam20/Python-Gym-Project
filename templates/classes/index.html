@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Classes</h1>
+<hr>
+<table class="classes-table">
+    
+        {% for class in classes %}
+        <tr>
+            <td>Class Name: {{class.name}}</td>
+            <td>Class Type: {{class.type}}</td>
+
+        </tr>
+        {% endfor %}
+        <a href="/classes/new"><h4>Add New Class</h4></a>
+</table>
+
+{%endblock%}

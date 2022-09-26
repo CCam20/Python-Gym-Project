@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<form action="/members/add_member" method="POST">
+
+    <label for="first_name">First name: </label>
+    <input  type="text" name="first_name" id="first_name" placeholder="First Name" required autofocus>
+    <label for="last_name">Last Name: </label>
+    <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+    <label for="age">Age: </label>
+    <input type="number" min="18" name="age" id="age" placeholder="age" required>
+    <label for="membership_type">Membership Type: </label>
+    <select name="membership_type" id="membership_type">
+    <option value="Standard">Standard</option>
+    <option value="Premium">Premium</option>
+    </select>
+    <button type="submit">Add Member</button>
+</form>
+
+
+
+{% endblock %}

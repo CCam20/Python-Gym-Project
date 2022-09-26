@@ -10,8 +10,8 @@ import repositories.enrollment_repository as enrollment_repository
 class_repository.delete_all()
 member_repository.delete_all()
 
-member1 = Member('Vlad', "Von Carstein", 500, "standard")
-member2 = Member('Isabella', 'Von Carstein', 400, "standard")
+member1 = Member('Vlad', "Von Carstein", 500, "Standard")
+member2 = Member('Isabella', 'Von Carstein', 400, "Standard")
 member_repository.save(member1)
 member_repository.save(member2)
 
