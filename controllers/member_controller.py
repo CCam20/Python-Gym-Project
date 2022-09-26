@@ -35,13 +35,13 @@ def delete_member(id):
     member_repository.delete(id)
     return redirect('/members')
 
-@members_blueprint.route("/member/edit/<id>", methods=['GET'])
+@members_blueprint.route("/class/edit/<id>", methods=['GET'])
 def edit_member(id):
     member = member_repository.select(id)
     # classes = class_repository.select_all()
     return render_template('members/edit.html', member=member)
 
-@members_blueprint.route('/member/update/<id>', methods=['POST'])
+@members_blueprint.route('/class/update/<id>', methods=['POST'])
 def update_member(id):
     first_name= request.form['first_name']
     last_name= request.form['last_name']

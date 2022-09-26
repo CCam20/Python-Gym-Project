@@ -32,3 +32,16 @@ def new_class():
 def delete(id):
     class_repository.delete(id)
     return redirect("/classes")
+
+@class_blueprint.route("/class/edit/<id>", methods=['GET'])
+def edit_member(id):
+    Class = class_repository.select(id)
+    return render_template('classes/edit.html', Class=Class)
+
+@class_blueprint.route('/class/update/<id>', methods=['POST'])
+def update_member(id):
+    name= request.form['name']
+    type= request.form['type']
+    updated_member= Class(name, type, id)
+    class_repository.update(updated_member)
+    return redirect('/classes')
