@@ -8,8 +8,8 @@
     
         {% for class in classes %}
         <tr>
-            <td>Class Name: {{class.name}}</td>
-            <td>Class Type: {{class.type}}</td>
+            <td><a href="/class/{{class.id}}">Class Name: {{class.name}}</td>
+            <td>Class Type: {{class.type}}</td></a>
 
         </tr>
         {% endfor %}

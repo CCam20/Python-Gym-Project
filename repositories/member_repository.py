@@ -42,7 +42,13 @@ def classes(enrollment):
         classs = Class(row['first_name'], row['last_name'], row['age'], row['membership_type'], row['id'])
         classes.append(classs)
     return classes
-    
+
+def update(member):
+    sql = "UPDATE members SET (first_name, last_name, age, membership_type) = (%s, %s, %s, %s)WHERE id = %s"
+    values = [member.first_name, member.last_name, member.age, member.membership_type, member.id]
+    run_sql(sql, values)
+
+
 def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]

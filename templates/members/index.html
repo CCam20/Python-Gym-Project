@@ -9,14 +9,14 @@
     
         {% for member in members %}
         <tr>
-            <td>First Name: {{member.first_name}}</td>
+            <td><a href="/member/{{member.id}}">First Name: {{member.first_name}}</td></a>
             <td>Last Name: {{member.last_name}}</td>
             <td>Age: {{member.age}}</td>
             <td>Membership: {{member.membership_type}}</td>
         </tr>
         {% endfor %}
         <a href="/members/new"><h4>Add New Member</h4></a>
-        
+
 </table>
 
 </form>

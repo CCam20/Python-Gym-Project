@@ -42,6 +42,11 @@ def members(enrollment):
         members.append(member)
     return member
 
+def update(Class):
+    sql = "UPDATE classes SET (name, type) = (%s, %s)WHERE id = %s"
+    values = [Class.name, Class.type, Class.id]
+    run_sql(sql, values)
+
 def delete(id):
     sql = "DELETE FROM classes WHERE id = %s"
     values = [id]
