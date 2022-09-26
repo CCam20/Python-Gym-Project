@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<table class="classes-table">
+
+    <tr>
+        <td>Class Name: {{Class.name}}</td>
+        <td>Class Type: {{Class.type}}</td>
+
+    </tr>
+</table>
+<form action="/class/delete/{{Class.id}}" method="POST">
+    <input type="submit" value="Delete">
+</form>
+{% endblock  %}
