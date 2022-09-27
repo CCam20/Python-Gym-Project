@@ -1,1 +1,17 @@
 {% extends 'base.html' %}
+hi
+{% block content %}
+
+<h1>Enrollments</h1>
+<hr>
+<table class="enrollments-table">
+    
+        {% for enrollment in enrollments %}
+        <tr>
+            <td>Member Name: {{enrollment.member.first_name}} {{enrollment.member.last_name}}</td>
+            <td>Class name: {{enrollment.Class.name}}</td>
+
+        </tr>
+        {% endfor %}
+        <a href="/enrollment/new"><h4>Sign Member up for new class</h4></a>
+{% endblock %}

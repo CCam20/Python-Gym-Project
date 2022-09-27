@@ -1,6 +1,6 @@
 class Enrollment:
     
-    def __init__(self, member_id, Class_id, id= None):
-        self.member= member_id
-        self.Class= Class_id
+    def __init__(self, member, Class, id= None):
+        self.member= member
+        self.Class= Class
         self.id = id

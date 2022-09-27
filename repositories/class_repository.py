@@ -31,16 +31,16 @@ def select(id):
         value = Class(result['name'], result['type'], result['id'])
     return value
 
-def members(enrollment):
+def members(Class):
     members =[]
-    sql="SELECT members.* FROM members INNER JOIN enrollments ON enrollments.member_id = members.id WHERE enrollment_id = %s" 
-    values = [enrollment.id]
+    sql="SELECT members.* FROM members INNER JOIN enrollments ON enrollments.member_id = members.id WHERE class_id = %s" 
+    values = [Class.id]
     results = run_sql(sql,values)
 
     for row in results:
         member = Member(row['first_name'], row['last_name'], row['age'], row['membership_type'], row['id'])
         members.append(member)
-    return member
+    return members
 
 def update(Class):
     sql = "UPDATE classes SET (name, type) = (%s, %s)WHERE id = %s"

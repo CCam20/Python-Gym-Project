@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+<hr>  
 <table class="classes-table">
 
     <tr>
@@ -16,4 +16,11 @@
 <form action="/class/edit/{{Class.id}}" method="GET">
     <input type="submit" value="Edit">
 </form>
+<hr>
+<div>Members in class: {% for member in members %} {{member.first_name}} {{member.last_name}} ,<br> {% endfor %}
+</div>
+
+
+
+
 {% endblock  %}

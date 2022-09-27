@@ -18,6 +18,6 @@ CREATE TABLE classes(
 
 CREATE TABLE enrollments(
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id) ON DELETE CASCADE,
-    class_id INT REFERENCES classes(id) ON DELETE CASCADE
+    member_id INT NOT NULL REFERENCES members(id) ON DELETE CASCADE,
+    class_id INT NOT NULL REFERENCES classes(id) ON DELETE CASCADE
 );

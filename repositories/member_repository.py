@@ -32,16 +32,29 @@ def select(id):
         member = Member(result['first_name'], result['last_name'], result['age'], result['membership_type'], result['id'])
     return member
 
-def classes(enrollment):
+def classes(member):
     classes =[]
-    sql="SELECT classes.* FROM classes INNER JOIN enrollments ON enrollments.class_id = classes.id WHERE enrollment_id = %s" 
-    values = [enrollment.id]
+    sql="SELECT classes.* FROM classes INNER JOIN enrollments ON enrollments.class_id = classes.id WHERE member_id = %s" 
+    values = [member.id]
     results = run_sql(sql,values)
 
     for row in results:
-        classs = Class(row['first_name'], row['last_name'], row['age'], row['membership_type'], row['id'])
-        classes.append(classs)
+        c = Class(row['name'], row['type'])
+        classes.append(c)
     return classes
+
+
+# def locations(user):
+#     locations= []
+#     sql="SELECT locations.* FROM locations INNER JOIN visits ON visits.location_id = locations.id WHERE user_id = %s"
+#     values = [user.id]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         location= Location(row['name'], row['category'], row['id'])
+#         locations.append(location)
+#     return locations
+
 
 def update(member):
     sql = "UPDATE members SET (first_name, last_name, age, membership_type) = (%s, %s, %s, %s)WHERE id = %s"

@@ -16,5 +16,8 @@
 <form action="/member/edit/{{member.id}}" method="GET">
     <input type="submit" value="Edit">
 </form>
+<hr>
+<div>Booked Into: {% for class in classes %} {{class.name}} ,<br> {% endfor %}
+</div>
 
 {% endblock  %}

@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
+from controllers.enrollment_controller import enrollment
 from models.Class import Class
 import repositories.class_repository as class_repository
+import repositories.member_repository as member_repository
+import repositories.enrollment_repository as enrollment_repository
 
 class_blueprint = Blueprint('class', __name__)
 
@@ -14,7 +17,9 @@ def classes():
 @class_blueprint.route("/class/<id>")
 def show_class(id):
     Class = class_repository.select(id)
-    return render_template('/classes/class.html', Class=Class)
+    members =class_repository.members(Class)
+    enrollments = enrollment_repository.select_all()
+    return render_template('/classes/class.html', Class=Class, members=members, enrollments=enrollments)
 
 @class_blueprint.route('/classes/new')
 def new():
