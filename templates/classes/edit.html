@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<form action="/class/update/{{Class.id}}" method="POST">
+    <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{Class.name}}" required autofocus>
+    </div>
+
+    <div>
+    <label for="type">Last Name:</label>
+    <input type="text" id="type" name="type" value="{{Class.type}}" required>
+    </div>
+
+    <button type="submit">Update Member</button>
+</form>
+
+{% endblock  %}
