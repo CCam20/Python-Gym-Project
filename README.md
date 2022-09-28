@@ -1,7 +1,14 @@
 # Week-5-Project-Gym
+<hr>
+<h1>Completed Features
+<li>Allows the gym to create and edit Members
+<li>Allows the gym to create and edit Classes
+<li>Allows the gym to book members on specific classes
+<li>Show a list of all upcoming classes
+<li>Show all members that are booked in for a particular class
+<hr>
+<h1>To do
+<li>Delete bookings from Members page/Delete Members from Classes
 
-<li>The app should allow the gym to create and edit Members<li>
-The app should allow the gym to create and edit Classes
-The app should allow the gym to book members on specific classes
-The app should show a list of all upcoming classes
-The app should show all members that are booked in for a particular class
+
+<hr>
