@@ -1,8 +1,8 @@
 h1{
-    background-color: black;
-    text-align: center;
-    color: wheat;
-    margin: 0px;
+        background-color: black;
+        text-align: center;
+        color: wheat;
+        margin: 0px;
 }
 
 .newmem:link, .newmem:visited{
@@ -24,4 +24,4 @@ h1{
 }
 .enroll_links:hover{
         color: blue;
-    }
+}

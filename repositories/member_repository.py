@@ -43,19 +43,6 @@ def classes(member):
         classes.append(c)
     return classes
 
-
-# def locations(user):
-#     locations= []
-#     sql="SELECT locations.* FROM locations INNER JOIN visits ON visits.location_id = locations.id WHERE user_id = %s"
-#     values = [user.id]
-#     results = run_sql(sql, values)
-
-#     for row in results:
-#         location= Location(row['name'], row['category'], row['id'])
-#         locations.append(location)
-#     return locations
-
-
 def update(member):
     sql = "UPDATE members SET (first_name, last_name, age, membership_type) = (%s, %s, %s, %s)WHERE id = %s"
     values = [member.first_name, member.last_name, member.age, member.membership_type, member.id]
