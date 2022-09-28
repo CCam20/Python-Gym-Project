@@ -7,7 +7,7 @@
         <td>{{member.first_name}}</td>
         <td>{{member.last_name}}</td>
         <td>Age: {{member.age}}</td>
-        <td>Membership: {{member.membership_type}}</td></a>
+        <td>Membership: {{member.membership_type}}</td>
 </tr>
 </table>
 <form action="/members/delete/{{member.id}}" method="POST">
@@ -17,7 +17,19 @@
     <input type="submit" value="Edit">
 </form>
 <hr>
-<div>Booked Into: {% for class in classes %} {{class.name}} <br> {% endfor %}
-</div>
 
+
+
+
+
+<table>
+    <tr>
+        <th>Booked Into:</th>
+    </tr>
+    {% for class in classes %}
+    <tr>    
+        <td>{{class.name}} </td>
+    </tr>
+    {% endfor %}
+</table> 
 {% endblock  %}

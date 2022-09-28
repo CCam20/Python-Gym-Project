@@ -46,7 +46,6 @@ def members(Class):
 
 
 def members_id(Class):
-    # pdb.set_trace()
     member_id =[]
     sql="SELECT members.* FROM members INNER JOIN enrollments ON enrollments.member_id = members.id WHERE class_id = %s" 
     values = [Class.id]

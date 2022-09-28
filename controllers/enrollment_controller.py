@@ -16,7 +16,9 @@ def enrollment():
 @enrollment_blueprint.route('/enrollment/<id>')
 def enrollment_show(id):
     enrollment = enrollment_repository.select(id)
-    return render_template('/enrollments/enrollment.html' ,enrollment=enrollment)
+    member = member_repository.select(id)
+    Class = class_repository.select(id)
+    return render_template('/enrollments/enrollment.html',Class=Class , member=member,enrollment=enrollment)
 
 @enrollment_blueprint.route('/enrollment/new')
 def new_enrollment():
@@ -44,3 +46,8 @@ def signup():
 def delete_enrollment(id):
     enrollment_repository.delete(id)
     return redirect('/enrollments')
+
+@enrollment_blueprint.route('/enrollment/delete_from_member/<id>', methods=['POST'])
+def delete_from_member(id):
+    enrollment_repository.delete(id)
+    return redirect("/members")

@@ -3,14 +3,12 @@
 {% block content %}
 <hr>  
 <table class="classes-table">
-
     <tr>
-        <td>{{Class.name}} |</td>
-        <td>Class Type: {{Class.type}} |</td>
-        <td>{{Class.date}} |</td>
-        <td>Capacity: {{Class.capacity}} |</td>
-
-    </tr>
+        <td>{{Class.name}} </td>
+        <td>Class Type: {{Class.type}} </td>
+        <td>{{Class.date}} </td>
+        <td>Capacity: {{Class.capacity}} </td>
+</tr>
 </table>
 <form action="/class/delete/{{Class.id}}" method="POST">
     <input type="submit" value="Delete">
@@ -19,10 +17,16 @@
     <input type="submit" value="Edit">
 </form>
 <hr>
-<div>Members in class: {% for member in members %} {{member.first_name}} {{member.last_name}} <br> {% endfor %}
-</div>
-
-
+<table>
+    <tr>
+        <th>Members in class:</th>
+    </tr>
+    {% for member in members %}
+    <tr>    
+        <td> {{member.first_name}} {{member.last_name}}</td>
+    </tr>
+    {% endfor %}
+</table>    
 
 
 {% endblock  %}

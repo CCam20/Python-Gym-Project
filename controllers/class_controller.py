@@ -20,7 +20,7 @@ def show_class(id):
     Class = class_repository.select(id)
     members =class_repository.members(Class)
     enrollments = enrollment_repository.select_all()
-    return render_template('/classes/class.html', Class=Class, members=members, enrollments=enrollments)
+    return render_template('/classes/class.html', Class=Class, members=members,member=members, enrollments=enrollments)
 
 @class_blueprint.route('/classes/new')
 def new():
@@ -42,6 +42,11 @@ def new_class():
 def delete(id):
     class_repository.delete(id)
     return redirect("/classes")
+
+@class_blueprint.route('/class/delete_from_member/<id>', methods=['POST'])
+def delete_from_member(id):
+    class_repository.delete(id)
+    return redirect("/members")
 
 @class_blueprint.route("/class/edit/<id>", methods=['GET'])
 def edit_member(id):

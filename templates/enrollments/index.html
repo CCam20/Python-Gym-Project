@@ -5,14 +5,18 @@
 <h1>Enrollments</h1>
 <hr>
 <a class="newmem" href="/enrollment/new">Sign Member up for new class</a>
-<table class="enrollments-table">
-    
-        {% for enrollment in enrollments %}
-        <tr>
-            <td><a href="/enrollment/{{enrollment.id}}">Member Name: {{enrollment.member.first_name}} {{enrollment.member.last_name}}
-            Class name: {{enrollment.Class.name}}
 
-        </tr>
-        {% endfor %}
+<table class="enrollments-table">
+    <tr>
+        <th>Member</th>
+        <th>Class Booked Into</th>
+    </tr>
+    {% for enrollment in enrollments %}
+    <tr>
+        <td><a class="enroll_links" href="/enrollment/{{enrollment.id}}">{{enrollment.member.first_name}} {{enrollment.member.last_name}}</a></td>
+        <td>{{enrollment.Class.name}}</td>
+
+    </tr>
+    {% endfor %}
 </table>
 {% endblock %}

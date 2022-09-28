@@ -5,18 +5,22 @@
 <h1>Classes</h1>
 <hr>
 <a class="newmem" href="/classes/new">Add New Class</a>
+
+
 <table class="classes-table">
-    
-        {% for class in classes %}
-        <tr>
-            <td><a  href="/class/{{class.id}}">{{class.name}}</td>
-            <td>Class Type: {{class.type}}</td>
-            <td>{{class.date}}</td>
-            <td>Capacity: {{class.capacity}}</td>
-
-        </tr>
-        {% endfor %}
-        
+    <tr>
+        <th>Class Name</th>
+        <th>Class Type</th>
+        <th>Date</th>
+        <th>Capacity</th>
+    </tr>
+    {% for class in classes %}
+    <tr>
+        <td><a class="class_links" href="/class/{{class.id}}">{{class.name}}</td></a>
+        <td>{{class.type}}</td>
+        <td>{{class.date}}</td>
+        <td>{{class.capacity}}</td>
+    </tr>
+    {% endfor %}
 </table>
-
 {%endblock%}

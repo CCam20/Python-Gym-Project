@@ -36,6 +36,11 @@ def select(id):
         enrollment = Enrollment(result['member_id'], result['class_id'], result['id'])
     return enrollment
 
+# def enrollments(member):
+#     enrollments =[]
+#     sql = "SELECT enrollments.* FROM enrollments INNER JOIN "
+
+
 def delete(id):
     sql = "DELETE FROM enrollments WHERE id = %s"
     values = [id]

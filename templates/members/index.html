@@ -6,21 +6,23 @@
 <h1>Members</h1>
 <hr>
 <a class="newmem" href="/members/new">Add New Member</a><br>
+
 <table class="members-table">
-    
-        {% for member in members %}
-        <tr>
-            <td><a class="members_links" href="/member/{{member.id}}">{{member.first_name}}</td></a>
-            <td>{{member.last_name}}</td>
-            <td>Age: {{member.age}}</td>
-            <td>Membership: {{member.membership_type}}</td>
-            
-        </tr>
-        {% endfor %}
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Membership Type</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td><a class="members_links" href="/member/{{member.id}}">{{member.first_name}}</td></a></td>
+        <td>{{member.last_name}}</td>
+        <td>{{member.age}}</td>
+        <td>{{member.membership_type}}</td>
+    </tr>
+    {% endfor %}
 </table>
 
-
-
-</form>
 
 {% endblock  %}
