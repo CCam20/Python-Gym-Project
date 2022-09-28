@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<hr>  
+<table class="enrollment-table">
+
+    <tr>
+        <!-- <td>{{enrollment.member.first_name}}</td> -->
+
+    </tr>
+</table>
+<form action="/enrollment/delete/{{enrollment.id}}" method="POST">
+    <input type="submit" value="Delete">
+</form>
+<hr>
+<!-- <div>{% for member in members %} {{member.first_name}} {{member.last_name}} ,<br> {% endfor %} -->
+</div>
+{% endblock content %}

@@ -38,7 +38,7 @@ def select(id):
 
 # def enrollments(member):
 #     enrollments =[]
-#     sql = "SELECT enrollments.* FROM enrollments INNER JOIN "
+#     sql = "SELECT enrollments.* FROM enrollments INNER JOIN classes ON class.id = enrollment_id WHERE enrollments_id = %s"
 
 
 def delete(id):

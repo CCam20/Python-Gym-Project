@@ -35,12 +35,11 @@ def signup():
     signup = Enrollment(member, Class)
     member_list = class_repository.members_id(Class)
     # pdb.set_trace()
-    if len(member_list) < Class.capacity:
-        if member_id not in member_list:
-            enrollment_repository.save(signup)
+    if len(member_list) < Class.capacity and member_id not in member_list:
+        enrollment_repository.save(signup)
         return redirect('/enrollments')
     else:
-        return redirect('/enrollments')
+        return render_template('/enrollments/refuse.html')
 
 @enrollment_blueprint.route('/enrollment/delete/<id>', methods=['POST'])
 def delete_enrollment(id):

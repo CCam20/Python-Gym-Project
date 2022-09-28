@@ -1,0 +1,27 @@
+h1{
+    background-color: black;
+    text-align: center;
+    color: wheat;
+    margin: 0px;
+}
+
+.newmem:link, .newmem:visited{
+        background-color: #f44336;
+        color: whitesmoke;
+        padding: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-bottom: 10px;
+}
+.enrollments-table{
+        text-align: left;
+        text-indent: 20px;
+        margin-top: 20px;
+}
+.enroll_links:link,.enroll_links:visited, .enroll_links:active{
+        color: black;
+        text-decoration: none;
+}
+.enroll_links:hover{
+        color: blue;
+    }
