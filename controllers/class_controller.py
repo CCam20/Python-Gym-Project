@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from controllers.enrollment_controller import enrollment
 from models.Class import Class
+from datetime import datetime, timedelta
 import repositories.class_repository as class_repository
 import repositories.member_repository as member_repository
 import repositories.enrollment_repository as enrollment_repository
@@ -29,7 +30,11 @@ def new():
 def new_class():
     name= request.form['class_name']
     type= request.form['class_type']
-    new_class= Class(name, type)
+    date= request.form['class_date']
+    capacity = request.form['class_capacity']
+    i = date.split("-")
+    date = i[1]+'-'+i[2]+'-'+i[0]
+    new_class= Class(name, type, date, capacity)
     class_repository.save(new_class)
     return redirect('/classes')
 
@@ -47,6 +52,8 @@ def edit_member(id):
 def update_member(id):
     name= request.form['name']
     type= request.form['type']
-    updated_member= Class(name, type, id)
+    date = request.form['date']
+    capacity = request.form['capacity']
+    updated_member= Class(name, type, date, capacity, id)
     class_repository.update(updated_member)
     return redirect('/classes')

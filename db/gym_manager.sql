@@ -13,7 +13,10 @@ CREATE TABLE members(
 CREATE TABLE classes(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    type VARCHAR(255)
+    type VARCHAR(255),
+    date VARCHAR(255),
+    capacity INT
+
 );
 
 CREATE TABLE enrollments(

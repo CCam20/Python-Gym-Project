@@ -4,16 +4,19 @@
 
 <h1>Classes</h1>
 <hr>
+<a class="newmem" href="/classes/new">Add New Class</a>
 <table class="classes-table">
     
         {% for class in classes %}
         <tr>
-            <td><a href="/class/{{class.id}}">Class Name: {{class.name}}</td>
-            <td>Class Type: {{class.type}}</td></a>
+            <td><a  href="/class/{{class.id}}">{{class.name}}</td>
+            <td>Class Type: {{class.type}}</td>
+            <td>{{class.date}}</td>
+            <td>Capacity: {{class.capacity}}</td>
 
         </tr>
         {% endfor %}
-        <a href="/classes/new"><h4>Add New Class</h4></a>
+        
 </table>
 
 {%endblock%}

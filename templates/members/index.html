@@ -5,19 +5,21 @@
 
 <h1>Members</h1>
 <hr>
+<a class="newmem" href="/members/new">Add New Member</a><br>
 <table class="members-table">
     
         {% for member in members %}
         <tr>
-            <td><a href="/member/{{member.id}}">First Name: {{member.first_name}}</td></a>
-            <td>Last Name: {{member.last_name}}</td>
+            <td><a class="members_links" href="/member/{{member.id}}">{{member.first_name}}</td></a>
+            <td>{{member.last_name}}</td>
             <td>Age: {{member.age}}</td>
             <td>Membership: {{member.membership_type}}</td>
+            
         </tr>
         {% endfor %}
-        <a href="/members/new"><h4>Add New Member</h4></a>
-
 </table>
+
+
 
 </form>
 

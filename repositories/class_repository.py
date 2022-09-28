@@ -2,10 +2,11 @@ from db.run_sql import run_sql
 from models.member import Member
 from models.Class import Class #capital C in .Class to avoid conflict
 from models.enrollment import Enrollment
+import pdb
 
 def save(Class):
-    sql = 'INSERT INTO classes (name, type) VALUES (%s, %s) RETURNING id'
-    values = [Class.name, Class.type]
+    sql = 'INSERT INTO classes (name, type, date, capacity) VALUES (%s, %s, %s, %s) RETURNING id'
+    values = [Class.name, Class.type ,Class.date, Class.capacity]
     results = run_sql(sql, values)
     Class.id = results[0]['id']
     return Class
@@ -16,7 +17,7 @@ def select_all():
     results=run_sql(sql)
 
     for row in results:
-        result = Class(row['name'], row['type'], row['id'])
+        result = Class(row['name'], row['type'], row['date'], row['capacity'], row['id'])
         classes.append(result)
     return classes
 
@@ -28,7 +29,7 @@ def select(id):
 
     if results:
         result = results[0]
-        value = Class(result['name'], result['type'], result['id'])
+        value = Class(result['name'], result['type'], result['date'], result['capacity'] ,result['id'])
     return value
 
 def members(Class):
@@ -42,9 +43,22 @@ def members(Class):
         members.append(member)
     return members
 
+
+
+def members_id(Class):
+    # pdb.set_trace()
+    member_id =[]
+    sql="SELECT members.* FROM members INNER JOIN enrollments ON enrollments.member_id = members.id WHERE class_id = %s" 
+    values = [Class.id]
+    results = run_sql(sql,values)
+
+    for row in results:
+        member_id.append(row['id'])
+    return member_id
+
 def update(Class):
-    sql = "UPDATE classes SET (name, type) = (%s, %s)WHERE id = %s"
-    values = [Class.name, Class.type, Class.id]
+    sql = "UPDATE classes SET (name, type, date, capacity) = (%s, %s, %s, %s)WHERE id = %s"
+    values = [Class.name, Class.type, Class.date, Class.capacity, Class.id]
     run_sql(sql, values)
 
 def delete(id):

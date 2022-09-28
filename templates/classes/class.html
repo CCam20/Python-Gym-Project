@@ -5,8 +5,10 @@
 <table class="classes-table">
 
     <tr>
-        <td>Class Name: {{Class.name}}</td>
-        <td>Class Type: {{Class.type}}</td>
+        <td>{{Class.name}} |</td>
+        <td>Class Type: {{Class.type}} |</td>
+        <td>{{Class.date}} |</td>
+        <td>Capacity: {{Class.capacity}} |</td>
 
     </tr>
 </table>
@@ -17,7 +19,7 @@
     <input type="submit" value="Edit">
 </form>
 <hr>
-<div>Members in class: {% for member in members %} {{member.first_name}} {{member.last_name}} ,<br> {% endfor %}
+<div>Members in class: {% for member in members %} {{member.first_name}} {{member.last_name}} <br> {% endfor %}
 </div>
 
 

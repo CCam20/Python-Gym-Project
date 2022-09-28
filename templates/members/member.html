@@ -4,8 +4,8 @@
 <hr>
 <table class="members-table">
     <tr>
-        <td>First Name: {{member.first_name}}</td>
-        <td>Last Name: {{member.last_name}}</td>
+        <td>{{member.first_name}}</td>
+        <td>{{member.last_name}}</td>
         <td>Age: {{member.age}}</td>
         <td>Membership: {{member.membership_type}}</td></a>
 </tr>
@@ -17,7 +17,7 @@
     <input type="submit" value="Edit">
 </form>
 <hr>
-<div>Booked Into: {% for class in classes %} {{class.name}} ,<br> {% endfor %}
+<div>Booked Into: {% for class in classes %} {{class.name}} <br> {% endfor %}
 </div>
 
 {% endblock  %}

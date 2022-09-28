@@ -39,7 +39,7 @@ def classes(member):
     results = run_sql(sql,values)
 
     for row in results:
-        c = Class(row['name'], row['type'])
+        c = Class(row['name'], row['type'], row['date'], row["capacity"])
         classes.append(c)
     return classes
 
