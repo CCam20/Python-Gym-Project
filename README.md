@@ -13,7 +13,7 @@
 
 
 <hr>
-
+<h1>Uses</h1>
 <p>View Members via the members tab and add new members through form submission</p>
 <p>View Classes via the classes tab and add new classes through form submission</p>
 <p>View specific members/classes but clicking on names of each, delete or edit members/classes</p>
