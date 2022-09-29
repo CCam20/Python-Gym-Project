@@ -18,3 +18,8 @@
 <p>View Classes via the classes tab and add new classes through form submission</p>
 <p>View specific members/classes but clicking on names of each, delete or edit members/classes</p>
 <p>View all booking via Enrollment tab</p>
+
+<hr>
+Programs used psycopg2, Flask psql 
+
+Run

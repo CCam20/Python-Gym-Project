@@ -46,7 +46,7 @@ def delete_enrollment(id):
     enrollment_repository.delete(id)
     return redirect('/enrollments')
 
-@enrollment_blueprint.route('/enrollment/delete_from_member/<id>', methods=['POST'])
-def delete_from_member(id):
-    enrollment_repository.delete(id)
-    return redirect("/members")
+@enrollment_blueprint.route('/enrollment/delete_from_member/<enroll_id>/<member_id>', methods=['POST'])
+def delete_from_member(enroll_id, member_id):
+    enrollment_repository.delete(enroll_id)
+    return redirect("/member/" + member_id)

@@ -4,6 +4,7 @@ from models.Class import Class #capital C in .Class to avoid conflict
 from models.enrollment import Enrollment
 import repositories.class_repository as class_repository
 import repositories.member_repository as member_repository
+import pdb
 
 def save(enrollments):
     sql = "INSERT INTO enrollments (member_id, class_id) VALUES (%s, %s) RETURNING id"
@@ -36,10 +37,31 @@ def select(id):
         enrollment = Enrollment(result['member_id'], result['class_id'], result['id'])
     return enrollment
 
-# def enrollments(member):
-#     enrollments =[]
-#     sql = "SELECT enrollments.* FROM enrollments INNER JOIN classes ON class.id = enrollment_id WHERE enrollments_id = %s"
+def enrollments_member(member):
+    enrollments =[]
+    sql = "SELECT * FROM enrollments WHERE member_id = %s"
+    value= [member.id] 
+    results = run_sql(sql, value)
+    # pdb.set_trace()
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        Class = class_repository.select(row['class_id'])
+        enrollment = Enrollment(member, Class, row['id'])
+        enrollments.append(enrollment)
+    return enrollments
 
+def enrollments_class(Class):
+    enrollments =[]
+    sql = "SELECT * FROM enrollments WHERE member_id = %s"
+    value= [member.id] 
+    results = run_sql(sql, value)
+    # pdb.set_trace()
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        Class = class_repository.select(row['class_id'])
+        enrollment = Enrollment(member, Class, row['id'])
+        enrollments.append(enrollment)
+    return enrollments
 
 def delete(id):
     sql = "DELETE FROM enrollments WHERE id = %s"

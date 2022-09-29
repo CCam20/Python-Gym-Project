@@ -23,10 +23,10 @@
     <tr>
         <th>Booked Into:</th>
     </tr>
-    {% for class in classes %}
+    {% for enroll in enrollments %}
     <tr>    
-        <td>{{class.name}} </td>
-    </tr>
+        <td>{{enroll.Class.name}}<form action="/enrollment/delete_from_member/{{enroll.id}}/{{member.id}}" method="POST"><input type="submit" value="Delete"></td>
+        </tr>
     {% endfor %}
 </table> 
 {% endblock  %}
