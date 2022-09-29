@@ -1,7 +1,7 @@
 h1{
     background-color: black;
     text-align: center;
-    color: white;
+    color: wheat;
     margin: 0px;
 }
 
@@ -48,4 +48,14 @@ main nav ul li a:hover{
 }
 .main_links:hover{
     color: blue;
+}
+.del-edit{
+    display: flex;
+}
+td{
+    padding-right: 30px;
+}
+
+th{
+    font-size: x-large;
 }

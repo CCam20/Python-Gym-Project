@@ -10,23 +10,26 @@
         <td>Membership: {{member.membership_type}}</td>
 </tr>
 </table>
+<div class="del-edit">
 <form action="/members/delete/{{member.id}}" method="POST">
     <input type="submit" value="Delete">
 </form>
 <form action="/member/edit/{{member.id}}" method="GET">
     <input type="submit" value="Edit">
 </form>
+</div>
 <hr>
 
 
 <table>
     <tr>
-        <th>Booked Into:</th>
+        <th><u>Booked Into:</u></th>
     </tr>
     {% for enroll in enrollments %}
     <tr>    
-        <td>{{enroll.Class.name}}<form action="/enrollment/delete_from_member/{{enroll.id}}/{{member.id}}" method="POST"><input type="submit" value="Delete"></td>
-        </tr>
+        <td>{{enroll.Class.name}}</td>
+        <td><form action="/enrollment/delete_from_member/{{enroll.id}}/{{member.id}}" method="POST"><input type="submit" value="Delete Booking"></td>
+    </tr>
     {% endfor %}
 </table> 
 {% endblock  %}
