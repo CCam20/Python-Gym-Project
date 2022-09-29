@@ -18,7 +18,7 @@ def classes():
 def show_class(id):
     Class = class_repository.select(id)
     members =class_repository.members(Class)
-    enrollments = enrollment_repository.enrollments(Class)
+    enrollments = enrollment_repository.enrollments_class(Class)
     return render_template('/classes/class.html', Class=Class, members=members, enrollments=enrollments)
 
 @class_blueprint.route('/classes/new')

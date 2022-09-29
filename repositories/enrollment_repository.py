@@ -52,8 +52,8 @@ def enrollments_member(member):
 
 def enrollments_class(Class):
     enrollments =[]
-    sql = "SELECT * FROM enrollments WHERE member_id = %s"
-    value= [member.id] 
+    sql = "SELECT * FROM enrollments WHERE class_id = %s"
+    value= [Class.id] 
     results = run_sql(sql, value)
     # pdb.set_trace()
     for row in results:

@@ -20,6 +20,10 @@
 <p>View all booking via Enrollment tab</p>
 
 <hr>
-Programs used psycopg2, Flask psql 
+Programs used psycopg2, Flask  Python Html jinja
 
-Run
+Run:
+<li>Drop/Create Db gym_manager
+<li>Create Tables with "psql -d gym_manager -f db/gym_manager"
+<li>Populate tables with console.py
+<li>Run flask with "flask run"
