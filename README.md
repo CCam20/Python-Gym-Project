@@ -9,7 +9,7 @@
 <li>Show warning if class is full or member is already booked in
 <hr>
 <h1>To do</h1>
-<li>Delete bookings from Members page/Delete Members from Classes
+<li><s>Delete bookings from Members page/Delete Members from Classes</s>
 
 
 <hr>
@@ -20,7 +20,7 @@
 <p>View all booking via Enrollment tab</p>
 
 <hr>
-Programs used psycopg2, Flask  Python Html jinja
+Programs used: Psycopg2, Flask,  Python, Html, Jinja
 
 Run:
 <li>Drop/Create Db gym_manager
