@@ -1,5 +1,16 @@
+h1{
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin: 0px;
+}
+
 body{
-    background-color: wheat;
+    /* background-color: wheat; */
+    background-image: url("../images/main_bg.jpeg");
+    background-size: cover;
+    color: white;
+
 }
 main nav ul li{
     list-style: none;
@@ -14,25 +25,25 @@ main nav ul{
 main nav ul li a:link{
     text-decoration: none;
     list-style: none;
-    color:black
+    color:white
 }
 main nav ul li a:active{
     text-decoration: none;
     list-style: none;
-    color:black
+    color:white
 
 }
 main nav ul li a:visited{
     text-decoration: none;
     list-style: none;
-    color:black
+    color:white
 
 }
 main nav ul li a:hover{
     color: blue;
 }
 .main_links:link, .main_links:visited, .main_links:active{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 .main_links:hover{

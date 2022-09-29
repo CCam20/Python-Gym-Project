@@ -68,4 +68,3 @@ enrollment_repository.save(enrollment2)
 enrollment3 = Enrollment(member3, class3)
 enrollment_repository.save(enrollment3)
 
-# class_repository.members_id(class1)

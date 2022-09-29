@@ -1,9 +1,9 @@
-h1{
+/* h1{
     background-color: black;
     text-align: center;
     color: wheat;
     margin: 0px;
-}
+} */
 
 .newmem:link, .newmem:visited{
         background-color: #f44336;
@@ -17,9 +17,10 @@ h1{
     text-align: left;
     text-indent: 20px;
     margin-top: 20px;
+    color: white;
 }
 .members_links:link,.members_links:visited, .members_links:active{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 .members_links:hover{

@@ -1,8 +1,6 @@
 .mainpage{
     display: flex;
     justify-content: center;
-    justify-content: space-around;
-}
-.main_links:hover{
-    background-color: blueviolet;
+    justify-content: space-evenly;
+    margin-left: 60px;
 }
