@@ -10,7 +10,8 @@
 <hr>
 <h1>To do</h1>
 <li><s>Delete bookings from Members page/Delete Members from Classes</s>
-
+<li>Activate and deactivate members and classes
+<li>Make use od standard and premium memberships
 
 <hr>
 <h1>Uses</h1>
