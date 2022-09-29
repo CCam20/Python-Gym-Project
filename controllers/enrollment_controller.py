@@ -34,7 +34,6 @@ def signup():
     Class = class_repository.select(class_id)
     signup = Enrollment(member, Class)
     member_list = class_repository.members_id(Class)
-    # pdb.set_trace()
     if len(member_list) < Class.capacity and member_id not in member_list:
         enrollment_repository.save(signup)
         return redirect('/enrollments')
