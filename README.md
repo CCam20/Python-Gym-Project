@@ -28,3 +28,13 @@ Run:
 <li>Create Tables with "psql -d gym_manager -f db/gym_manager"
 <li>Populate tables with console.py
 <li>Run flask with "flask run"
+
+<hr>
+<h1>Screenshots</h1>
+
+![main_screen](/screenshots/MainPage.png)
+![members_screen](/screenshots/MembersPage.png)
+![classes_screen](/screenshots/ClassesPage.png)
+![bookings_screen](/screenshots/BookingsPage.png)
+![edit_screen](/screenshots/EditMemberPage.png)
+![member_info_screen](/screenshots/MemberInfo.png)
